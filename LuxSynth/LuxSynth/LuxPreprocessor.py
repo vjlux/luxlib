@@ -10,6 +10,9 @@ import logging
 
 import LuxImage
 
+import open3d as o3d
+import numpy as np
+
 ############################################################
 # Globals
 ############################################################
@@ -30,3 +33,12 @@ class LuxPreprocessor(object):
         p_outputPath):
         self.m_outputPath = p_outputPath;
     
+    def LoadDepthFromRGB24bitImage(self, p_depthImageFileName):
+        
+        #depth = np.array([]);
+        
+        #color_raw = o3d.io.read_image("../../TestData/RGBD/color/00000.jpg")
+        depth_raw = o3d.io.read_image(p_depthImageFileName);
+        
+        
+        return depth_raw;
